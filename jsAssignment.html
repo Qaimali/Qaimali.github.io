@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<form>
+ Name: <input type="text" id="username"/>
+  
+</form>
+<button onclick="insRow()">submit</button>
+<table id="myTable" border="1">
+    <tr>
+      <td>Index</td>
+      <td>Name</td>
+   <td>Edit</td> 
+      <td>Delete?</td>
+  
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><input size=25 type="text" id="latbox" /></td>
+     <td><input type="button" id="editPOIbutton" value="Edit" onclick="editrow(this)" /></td>
+      <td><input type="button" id="delPOIbutton" value="Delete" onclick="deleteRow(this)" /></td>
+   
+    </tr>
+  </table>
+<br>
+<p id="full_array"></p>
+
+
+<script>
+var array=[];
+function deleteRow(row) {
+  var i = row.parentNode.parentNode.rowIndex;
+  document.getElementById('myTable').deleteRow(i);
+  array.splice(i, 1);
+ // document.getElementById("full_array").innerHTML = array;
+}
+function editrow(row) {
+    var namep= prompt("Enter New name:","");
+    var i = row.parentNode.parentNode.rowIndex;
+    var x = document.getElementById('myTable');
+    array[i]=namep;
+    var ini=x.rows[i].getElementsByTagName('input')[0];
+    ini.value=array[i];  
+}
+
+var count=0;
+function insRow() {
+	var user = document.getElementById("username").value;
+  	var x = document.getElementById('myTable');
+    if(count==0)
+   {
+    	var ini=x.rows[1].getElementsByTagName('input')[0];
+        array[count]=user;
+        ini.value=array[count];
+        ++count
+        
+   }
+    else if(count>0)
+    {
+  	var new_row = x.rows[1].cloneNode(true);
+  	var len = x.rows.length;
+  	new_row.cells[0].innerHTML = len;
+  	var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
+  	inp1.id += len;
+    array[count]=user;
+  	inp1.value = array[count];
+  	++count;
+    }
+  	x.appendChild(new_row);
+}
+
+</script>
+
+</body>
+</html>
