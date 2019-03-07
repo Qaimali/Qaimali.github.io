@@ -4,25 +4,73 @@
 
   <title> The Islamic Republic of Pakistan </title>
   <link rel="styles" href="styles.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
-    function myFunction() {
-    alert("You have changed the size of the browser window!");
-  }
-  
-  function myFunctionVote() {
-    alert("Your Vote is submitted");
-  }
-  function myFunctionM() {
-  alert("Welcome Sir!");
-  }
-  function myFunctionF() {
-  alert("Welcome Ma'am!");
-  }
-  function myFunctionLetters() {
-  var x = document.getElementById("fname");
-  x.value = x.value.toUpperCase();
-}
+  $(document).ready(function(){
+  $("#Male").click(function(){
+    alert('Welcome Sir!')
+  });
+  $("#Female").click(function(){
+    alert('Wellcome Maam')
+  });
+  $("#submit").click(function(){
+    alert('jjjs')
+  });
+  $("#texts").change(function(){
+    $("#texts").val($("#texts").val().toUpperCase());
+  });
+  $("#w31").click(function(){
+    $("#w3s").attr("href", "https://en.wikipedia.org/wiki");
+  });
+  $("#w32").click(function(){
+    $("#w32").attr("href", "https://en.wikipedia.org/wiki");
+  });
+  $("#w33").click(function(){
+    $("#w33").attr("href", "https://en.wikipedia.org/wiki");
+  });
+  $("#w34").click(function(){
+    $("#w34").attr("href", "https://en.wikipedia.org/wiki");
+  });
+  $("#w35").click(function(){
+    $("#w35").attr("href", "https://en.wikipedia.org/wiki");
+  });
+  $("#w36").click(function(){
+    $("#w36").attr("href", "https://en.wikipedia.org/wiki");
+  });
+  $("#w37").click(function(){
+    $("#w37").attr("href", "https://en.wikipedia.org/wiki");
+  });
+  $(window).resize(function(){
+    alert('kk')
+  });
+  $("#newPakistan").click(function(){
+    $("#PakImage").toggle();
+  });
+  $("#fadePakistan").click(function(){
+    $("#PakImage").hide();
+    $("#PakImage").fadeIn(4000);
+  });
+  $("#slidePakistan").click(function(){
+    $("#PakImage").hide();
+    $("#PakImage").slideDown(6000);
+  });
+  $("#stopPakistan").click(function(){
+    $("#PakImage").stop();
+  });
+  $("#animate").click(function(){
+    $("#PakImage").animate({
+      left: '250px',
+      height: '150px',
+      width: '150px'
+    });
+    $("#PakImage").animate({
+      down: '250px',
+      height: '400px',
+      width: '800px'
+    });
+  });
+});
+
   </script>
   <style>
     body {
@@ -100,111 +148,24 @@
   </style>
 </head>
 
-<body onresize="myFunction()">
-
-  <center> 
-      <picture>
-          <source media="(min-width: 650px)" srcset="Flag-of-the-President-of-Pakistan-864x400_c.gif" style="width:70%;">
-          <source media="(min-width: 465px)" srcset="pak.jpg" style="width:70%;">
-          <img src="pak4.png"alt="Pakistan"  style="width:70%;">
-        </picture>
+<body id='b1'>
+    <center>
+        <button id='newPakistan' >Toggle  Pakistan</button>
+        <button id='fadePakistan'>Fade Pakistan</button>
+        <button id='slidePakistan'>Slide Pakistan</button>
+        <button id='stopPakistan'>Stop Slide</button>
+        <button id='animate'>animate</button>
+      </center>
+  <center style="margin-top: 5%"> 
+          <img id='PakImage' src="Flag-of-the-President-of-Pakistan-864x400_c.gif" style="width:800px;height: 400px"/>
   </center>
+  
   <br><br>
   <nav>
 
 
 
-    <center>
-      <canvas id="myCanvas" width="300" height="200">
-        Your browser does not support the canvas element.
-      </canvas>
-    </center>
-
-    <div>
-
-      <p> Pakistan officially the Islamic Republic of Pakistan, is a federal parliamentary republic in South Asia. It
-        is the sixth-most populous country with a population exceeding 200 million people. It is the 36th largest
-        country in the world in terms of area Pakistan has a 1,046-kilometre (650 mi) coastline along the Arabian Sea
-        and the Gulf of Oman in the south and is bordered by India to the east, Afghanistan to the west, Iran to the
-        southwest and China in the far northeast respectively. It is separated from Tajikistan by Afghanistan's narrow
-        Wakhan Corridor in the north, and also shares a maritime border with Oman.</p>
-    </div>
-
-    <div>
-
-      <div>
-        <div style="float: left;width: 60%">
-          <h2> Qualities of Pakistan </h2>
-          <p> Pakistani people are <b>H</b>ospitable .They are <b>F</b>amily Oriented.They are <b>P</b>assionate about
-            Life.They are <b>H</b>umorous,<b>P</b>atriotic,<b>S</b>ports Lovers,<b>R</b>eslient,<b>B</b>ravest Nation,<b>C</b>ultural
-            and Traditional.</p>
-        </div>
-        <div>
-          <figure>
-            <video width="400" controls>
-              <source src="itro.MKV" type="video/mp4">
-            </video>
-
-
-          </figure>
-        </div>
-
-        <body>
-
-          <h2> Map of Pakistan </h2>
-
-          <div id="googleMap" style="width:100%;height:400px;"></div>
-
-          <script>
-            function myMap() {
-            var mapProp = {
-              center: new google.maps.LatLng(30.3753, 69.3451),
-              zoom: 5,
-            };
-            var myCenter = {
-              lat: 33.6844,
-              lng: 73.0479
-            };
-
-
-
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            var marker = new google.maps.Marker({
-              position: myCenter,
-              map: map
-            });
-            var infowindow = new google.maps.InfoWindow({
-              content: "Islamambad"
-            });
-
-            google.maps.event.addListener(marker, 'click', function () {
-              infowindow.open(map, marker);
-            });
-          }
-          var canvas = document.getElementById("myCanvas");
-          var ctx = canvas.getContext("2d");
-          ctx.font = "30px Comic Sans MS";
-          ctx.fillStyle = "green";
-          ctx.textAlign = "center";
-          ctx.fillText("Pakistan", canvas.width / 2, canvas.height / 2);
-        </script>
-
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF_eTEi1L1yTfScXvKHr_NghfY_u0NMbg&callback=myMap"></script>
-
-        </body>
-      </div>
-      <div>
-        <div >
-          <h2> Capital of Pakistan </h2>
-          <p> Islamabad is the capital city of Pakistan, and is federally administered as part of the
-            Islamabad Capital Territory. Built as a planned city in the 1960s to replace Karachi
-            as Pakistan's capital, Islamabad is noted for its high standards of living safety
-            and abundant greenery.</p>
-        </div>
-        <div>
-            <iframe width="1150" height="400" src="http://www.cda.gov.pk/about_islamabad/history/"></iframe>
-
-        </div>
+        
         <h3> Cities of Pakistan </h3>
 
         <table border="1" style="width:100%;height:10%">
@@ -225,7 +186,7 @@
             </td>
             <td rowspan="4">Punjab</td>
             <td>11,126,285.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Lahore">View Details</a></td>
+            <td><a href="https://en.wikipedia.org/wiki/Lahore"  id="w31">View Details</a></td>
           </tr>
 
           <tr>
@@ -233,27 +194,27 @@
             <th>Faislabad</th>
             </td>
             <td>3,204,726</td>
-            <td><a href="https://en.wikipedia.org/wiki/Faisalabad">View Details</a></td>
+            <td><a href="https://en.wikipedia.org/wiki/Faisalabad" id="w32">View Details</a></td>
           </tr>
           <td>
           <th>Rawalpindi</th>
           </td>
           <td>2,098,231</td>
-          <td><a href="https://en.wikipedia.org/wiki/Rawalpindi">View Details</a></td>
+          <td><a href="https://en.wikipedia.org/wiki/Rawalpindi"id="w33" >View Details</a></td>
           </tr>
           <tr>
             <td>
             <th>Multan</th>
             </td>
             <td>1,871,843</em></td>
-            <td><a href="https://en.wikipedia.org/wiki/Multan">View Details</a></td>
+            <td><a href="https://en.wikipedia.org/wiki/Multan"id="w34" >View Details</a></td>
           </tr>
           <tr>
             <td>
             <th>Queeta</th>
             <td>Balochistan</td>
             <td>1,001,205</td>
-            <td><a href="https://en.wikipedia.org/wiki/Quetta">View Details</a></td>
+            <td><a href="https://en.wikipedia.org/wiki/Quetta" id="w34">View Details</a></td>
           </tr>
           <tr>
             <td>
@@ -261,14 +222,14 @@
             </td>
             <td rowspan="2">Sindh</em></td>
             <td>1,001,205</td>
-            <td><a href="https://en.wikipedia.org/wiki/Karachi">View Details</a></td>
+            <td><a href="https://en.wikipedia.org/wiki/Karachi" id="w35">View Details</a></td>
           </tr>
           <tr>
             <td>
             <th>Hydrabad</th>
             </td>
             <td>1,001,205</td>
-            <td><a href="https://en.wikipedia.org/wiki/Karachi">View Details</a></td>
+            <td><a href="https://en.wikipedia.org/wiki/Karachi" id="w36">View Details</a></td>
           </tr>
           <tr>
             <td>
@@ -276,21 +237,21 @@
             </td>
             <td>Khyber pakhton khawa</td>
             <td>1,001,205</td>
-            <td><a href="https://en.wikipedia.org/wiki/Peshawar">View Details</a></td>
+            <td><a href="https://en.wikipedia.org/wiki/Peshawar"id="w37">View Details</a></td>
           </tr>
         </table>
         <h2> Personal Information: </h2>
         <form>
           <div>
             <label for="name" class="title">Name:</label>
-            <input type="text" id="fname" name="fname" onkeyup="myFunctionLetters()" />
+            <input type="text" id="texts" name="fname" />
           </div>
           <div>
             <label for="email" class="title">Email:</label>
             <input type="text" id="email" name="email" />
           </div>
           <span class="title">Gender:</span>
-          <input type="radio" name="gender" id="Male" value="M" onclick="myFunctionM()" />
+          <input type="radio" name="gender" id="Male" value="M" />
           <label for="male">Male</label>
           <input type="radio" name="gender" id="Female" value="F" onclick="myFunctionF()" />
           <label for="female">female</label> <br />
@@ -309,7 +270,7 @@
       </select>
       </br><br>
       <div>
-        <button type="submit" id="submit" onclick="myFunctionVote()">Submit</button>
+        <button type="submit" id="submit" >Submit</button>
       </div>
       <p id="demo"></p>
       </form>
